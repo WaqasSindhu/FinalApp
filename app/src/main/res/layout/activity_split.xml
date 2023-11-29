@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Black"
+    tools:context=".SplitActivity">
+
+    <View
+        android:id="@+id/red_line"
+        android:layout_width="match_parent"
+        android:layout_height="5dip"
+        android:layout_marginTop="170dp"
+        android:background="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/etSplitPeople"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSplitLabel"
+        style="@style/LabelStyle"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="300dp"
+
+        android:minWidth="120dp"
+        android:text="@string/people_total"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etSplitPeople"
+        style="@style/InputStyle"
+
+        android:layout_width="0dp"
+        android:layout_marginLeft="10dp"
+        android:ems="8"
+
+        android:hint="@string/number_of_people_hint"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvSplitLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvSplitLabel" />
+
+    <TextView
+        android:id="@+id/tvIndividualBill"
+        style="@style/OutputStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/individual_bill"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSplitLabel" />
+
+    <TextView
+        android:id="@+id/tvSplitBill"
+        style="@style/OutputStyle"
+
+        android:layout_width="0dp"
+        android:layout_marginStart="10dp"
+        android:minWidth="220dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvIndividualBill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIndividualBill" />
+
+    <TextView
+        android:id="@+id/tvTotalAmt"
+        style="@style/OutputStyle"
+
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSplit"
+        style="@style/ButtonStyle"
+
+        android:layout_marginBottom="150dp"
+        android:onClick="splitter"
+        android:text="@string/split_Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvSplitBill"
+        app:layout_constraintStart_toStartOf="@+id/tvSplitBill"
+        app:layout_constraintTop_toBottomOf="@+id/tvSplitBill"
+        app:layout_constraintVertical_bias="0.522" />
+</androidx.constraintlayout.widget.ConstraintLayout>
